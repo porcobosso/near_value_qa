@@ -164,6 +164,25 @@ class NearConnection{
         return result
     }
 
+    async createQuestion(info, totalNear){
+        await this._contract.createQuestion({
+            id: info['id'],
+            title:info['title'],
+            content:info['content'],
+            repliers: info['repliers'],
+            moneys: info['moneys'],
+            lock: info['lock']
+        }, 30000000000000, utils.format.parseNearAmount(`${totalNear}`))
+    }
+
+    async getTransactionStatus(hax){
+        const provider = new nearAPI.providers.JsonRpcProvider(
+            "https://archival-rpc.testnet.near.org"
+          );
+        const result = await provider.txStatus(hax, this._accountId);
+        return result
+    }
+
     decodeContent(s){
         var content = cryptico.decrypt(s, this._rsakey).plaintext
         return unescape(content)
