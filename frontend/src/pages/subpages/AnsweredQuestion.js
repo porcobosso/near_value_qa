@@ -2,7 +2,7 @@ import React from 'react';
 import * as nearAPI from 'near-api-js'
 import {Table, Container, Row, Col} from 'react-bootstrap'
 
-const ListLimit = 10
+const ListLimit = 5
 const { utils } = nearAPI;
 
 class AnsweredQuestion extends React.Component{

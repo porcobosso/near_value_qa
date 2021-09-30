@@ -2,8 +2,7 @@ import React from 'react';
 import * as nearAPI from 'near-api-js'
 import {Table, Container, Row, Col} from 'react-bootstrap'
 
-const ListLimit = 10
-const { utils } = nearAPI;
+const ListLimit = 5
 
 class UnAnsweredQuestion extends React.Component{
     constructor(options){
@@ -45,7 +44,14 @@ class UnAnsweredQuestion extends React.Component{
           <div className="card">
             <article className="card-group-item">
               <header className="card-header">
-                <h6 className="title">UnAnswered Questions</h6>
+              <Container>
+                  <Row>
+                    <Col xs={4}><h6 className="title">UnAnswered Questions</h6></Col>
+                    <Col xs={4}></Col>
+                    <Col xs={2}></Col>
+                    <Col xs={2}></Col>
+                  </Row>
+                </Container>
               </header>
               <div className="filter-content">
                 <Table hover>

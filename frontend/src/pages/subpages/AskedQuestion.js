@@ -1,7 +1,7 @@
 import React from 'react';
 import {Table, Container, Row, Col} from 'react-bootstrap'
 
-const ListLimit = 10
+const ListLimit = 5
 
 class AskedQuestion extends React.Component{
     constructor(options){
@@ -44,13 +44,19 @@ class AskedQuestion extends React.Component{
             <div className="card">
               <article className="card-group-item">
                 <header className="card-header">
-                  <h6 className="title">Asked Questions
-                  {this.state.signedIn? (<button
-                      className="btn btn-outline-secondary flow-right"
-                      onClick={()=>{this.showAddQuestion()}}>
-                      add question
-                    </button>):""}
-                  </h6>
+                  <Container>
+                    <Row>
+                      <Col xs={4}><h6 className="title">Asked Questions</h6></Col>
+                      <Col xs={4}></Col>
+                      <Col xs={2}></Col>
+                      <Col xs={2}>{this.state.signedIn? (<button
+                        className="btn btn-outline-secondary flow-right"
+                        onClick={()=>{this.showAddQuestion()}}>
+                        add question
+                      </button>):""}
+                      </Col>
+                    </Row>
+                  </Container>
                 </header>
                 <div className="filter-content">
                   <Table>
