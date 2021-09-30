@@ -29,8 +29,12 @@
 ```
 
 # deploy contract
-> yarn build:release
-> near deploy {contract.address} build/release/singleton.wasm
+```bash
+yarn build:release
+near deploy {contract.address} build/release/singleton.wasm
+```
 
 # frontend start
-> npm run dev
+```bash
+npm run dev
+```
