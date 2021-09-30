@@ -3,6 +3,7 @@ import * as nearAPI from 'near-api-js'
 import {Table, Container, Row, Col} from 'react-bootstrap'
 
 const ListLimit = 5
+const { utils } = nearAPI;
 
 class UnAnsweredQuestion extends React.Component{
     constructor(options){
