@@ -5,15 +5,18 @@
 - The answer content is only visible to the questioner and the respondent
 
 # code description
+```
 - backend/src/singleton
  - model.ts 
  - index.ts
+```
 
-
+```
 - frontend/src
  - modules/confirm/pages
   - home.js: confirm page for deposit
  - pages
+  - NearConnection.js: near contract interface
   - home.js: main page
   - subpages
     - HeadBanner.js: head banner
@@ -23,10 +26,11 @@
     - AddQuestion.js: question add page
     - AnswerQuestion.js: question answer page
     - QuestionDetail.js: question detail page
+```
 
 # deploy contract
 > yarn build:release
-> near deploy contract.address build/release/singleton.wasm
+> near deploy {contract.address} build/release/singleton.wasm
 
 # frontend start
 > npm run dev
