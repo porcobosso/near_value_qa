@@ -67,7 +67,7 @@ class NearConnection{
         try {
             let num = await this._contract.questionCount({});
         return num
-        } catch (error) {}
+        } catch (error) {console.log(error)}
         return 0
     }
 
@@ -76,7 +76,7 @@ class NearConnection{
         try {
             let num = await this._contract.answerCount({})
             return num
-        } catch (error) {}
+        } catch (error) {console.log(error)}
         return 0
     }
 
@@ -86,7 +86,7 @@ class NearConnection{
             try {
                 let questions = await this._contract.listMyAskedQuestions({user:this._accountId, limit:limit})
                 return questions
-            } catch (error) {}
+            } catch (error) {console.log(error)}
         }
         return []
         l
@@ -97,8 +97,9 @@ class NearConnection{
         if(!!this._accountId){
             try {
                 let questions = await this._contract.listUnAnsweredQuestions({user:this._accountId, limit:limit})
-            return questions
-            } catch (error) {}
+                console.log(questions)
+                return questions
+            } catch (error) {console.log(error)}
         }
         return []
     }
@@ -108,8 +109,9 @@ class NearConnection{
         if(!!this._accountId){
             try {
                 let questions = await this._contract.listAnsweredQuestions({user:this._accountId, limit:limit})
+                // question? why limit set 10 failed
                 return questions
-            } catch (error) {}
+            } catch (error) {console.log(error)}
         }
         return []
     }
@@ -122,6 +124,7 @@ class NearConnection{
             })
             return utils.format.formatNearAmount(claimable)
         } catch (error) {
+            console.log(error)
             return 0   
         }
     }
@@ -133,6 +136,7 @@ class NearConnection{
             })
             return 'success';
         } catch (error) {
+            console.log(error)
             return `${error}`;
         }
     }
